@@ -3,12 +3,12 @@ import ProjectCard from "../components/ProjectCard";
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col md:flex-row items-stretch w-full gap-6 mt-10 md:mt-20 h-auto md:h-48 lg:h-64">
+      <div className="flex flex-col md:flex-row items-stretch w-full gap-6 mt-10 md:mt-20 h-auto md:h-48 lg:h-56">
         <div className="flex-shrink-0 overflow-hidden">
           <img
             src="/np-photo.jpg"
             alt="Profile"
-            className="h-full w-auto rounded-xl object-cover"
+            className="h-56 md:h-full w-auto rounded-xl object-cover"
           />
         </div>
 
@@ -55,7 +55,7 @@ export default function Home() {
             </div>
             <div>
               <a
-                href="/resume"
+                href="/Nicholas_Pelletier.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative inline-block group whitespace-nowrap"
@@ -69,8 +69,7 @@ export default function Home() {
       </div>
       <div className="my-10">
         <p className="text-lg tracking-thinner text-justify">
-          I'm a full-stack web developer with 3 years
-          experience in building React apps.
+          {/* fullstack with background in music and film */}
         </p>
       </div>
       <ProjectCard
@@ -88,6 +87,14 @@ export default function Home() {
         link="https://vrai-dev.johnabbott.qc.ca/"
         linkText="Visit Site"
         images={["/eduvrai-1.png", "/eduvrai-2.png"]}
+      />
+      <ProjectCard
+        title="WhisperAds"
+        information="Chrome extension that gives you persistent control over Twitch ad volume, allowing you to mute, dim, or normalize ad volume compared to streams."
+        tech="JS, CSS, HTML, Chrome Extensions"
+        link="https://chromewebstore.google.com/search/WhisperAds"
+        linkText="View Extension"
+        images={["/whisperads-1.png", "/whisperads-2.png"]}
       />
     </div>
   );

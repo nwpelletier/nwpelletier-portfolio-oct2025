@@ -1,3 +1,5 @@
+import "./Resume.css";
+
 const Resume = () => {
   // Reusable Skill component
   const Skill = ({ name }: { name: string }) => (
@@ -38,10 +40,10 @@ const Resume = () => {
           <p className="font-bold">
             Software and Web Developer
           </p>
-          <p className="text-gray-500">
+          <p className="text-gray-500 font-semibold text-sm mb-2">
             CERASP, Montreal - Since 2024
           </p>
-          <ul className="list-disc text-sm md:text-base list-inside text-gray-500">
+          <ul className="resume__bullet--spacing list-disc pl-5 text-sm md:text-base  text-gray-500">
             <li>
               Designed and implemented a responsive,
               multilingual website using React and Strapi
@@ -73,10 +75,10 @@ const Resume = () => {
           <p className="font-bold">
             Sound Recording Technician
           </p>
-          <p className="text-gray-500">
+          <p className="text-gray-500 font-semibold text-sm mb-2">
             McGill University, Montreal - 2020 - 2022
           </p>
-          <ul className="list-disc text-sm md:text-base list-inside text-gray-500">
+          <ul className="resume__bullet--spacing list-disc text-sm md:text-base pl-5 text-gray-500">
             <li>
               Provided technical expertise for audio
               recording sessions in studio and live
@@ -101,11 +103,11 @@ const Resume = () => {
         {/* Job 3 */}
         <div>
           <p className="font-bold">Production Assistant</p>
-          <p className="text-gray-500">
+          <p className="text-gray-500 font-semibold text-sm mb-2">
             Industrial Light and Magic (ILM), Vancouver -
             2016 - 2018
           </p>
-          <ul className="list-disc text-sm md:text-base list-inside text-gray-500">
+          <ul className="resume__bullet--spacing list-disc text-sm md:text-base pl-5 text-gray-500">
             <li>
               Supported visual effects teams by managing
               asset tracking, documentation, and
@@ -165,9 +167,9 @@ const Resume = () => {
       {/* Skills */}
       <div className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">
-          Skills
+          Web/Software
         </h2>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mb-10">
           <Skill name="HTML" />
           <Skill name="Javascript" />
           <Skill name="React" />
@@ -175,11 +177,22 @@ const Resume = () => {
           <Skill name="TailwindCSS" />
           <Skill name="Node.js" />
           <Skill name="SQL" />
-          <Skill name="CSharp" />
+          <Skill name="C#" />
           <Skill name="Unity" />
           <Skill name="Git" />
           <Skill name="AWS" />
           <Skill name="Docker" />
+        </div>
+
+        <h2 className="text-2xl font-semibold mb-4">
+          Other
+        </h2>
+        <div className="flex flex-wrap gap-2">
+          <Skill name="Adobe Photoshop" />
+          <Skill name="Adobe Premiere" />
+          <Skill name="Pro Tools" />
+          <Skill name="Reaper" />
+          <Skill name="MIDI" />
         </div>
       </div>
 
