@@ -1,30 +1,49 @@
 type ProjectCardProps = {
   title: string;
+  information: string;
   tech: string;
-  link: string;
-  imageSrc: string;
+  link?: string;
+  linkText?: string;
+  images?: string[];
 };
 
-const ProjectCard = (props: ProjectCardProps) => {
+const ProjectCard = ({
+  title,
+  information,
+  tech,
+  link,
+  linkText,
+  images,
+}: ProjectCardProps) => {
   return (
-    <div className="my-2 border border-gray-200 overflow-hidden h-96 flex flex-row rounded-lg hover:shadow-lg transition-shadow duration-300">
-      <div className="w-1/2 h-full rounded-lg overflow-hidden flex flex-col p-4 gap-2 bg-white justify-center items-center">
-        <h1 className="text-lg font-bold">
-          {props.title}Title
+    <div className="my-2 border border-gray-200 overflow-hidden lg:h-96 flex flex-col lg:flex-row rounded-lg">
+      <div className="flex-[1] lg:h-full w-full lg:w-1/2 rounded-lg overflow-hidden flex flex-col pl-5 pr-5 py-10 gap-2 bg-white justify-center items-start md:pl-12">
+        <h1 className="text-3xl tracking-wider font-bold">
+          {title}
         </h1>
-        <p className="text-sm text-gray-500">
-          {props.tech}Tech
+        <p className="text-sm text-gray-400">
+          {information}
         </p>
+        <p className="text-sm text-gray-500">{tech}</p>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p className="text-sm text-gray-200 bg-gray-500 p-2 border border-gray-400 rounded-4xl hover:bg-gray-600 transition-all duration-200">
+            {linkText}
+          </p>
+        </a>
       </div>
-      <div className="w-1/2 h-full flex flex-col justify-center items-center bg-gray-100 overflow-hidden justify-between p-4">
-        {props.imageSrc && (
+      <div className="flex-[1] lg:h-full w-full lg:w-1/2 flex flex-row flex-wrap justify-center items-center bg-gray-200 p-4 gap-1 overflow-auto">
+        {images?.map((src, index) => (
           <img
-            src={props.imageSrc}
-            alt={props.title}
-            className="w-full h-48 object-cover"
+            key={index}
+            src={src}
+            alt={`${title} image ${index + 1}`}
+            className="max-w-[40%] max-h-[80%] m-2 object-cover rounded-lg"
           />
-        )}
-        Image
+        ))}
       </div>
     </div>
   );

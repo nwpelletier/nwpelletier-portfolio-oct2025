@@ -1,4 +1,3 @@
-import React from "react";
 import ProjectCard from "../components/ProjectCard";
 
 export default function Home() {
@@ -74,9 +73,22 @@ export default function Home() {
           experience in building React apps.
         </p>
       </div>
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
+      <ProjectCard
+        title="CERASP"
+        information="Lightweight, mobile-friendly website for CERASP, emphasizing ease-of-use and clear navigation for all users."
+        tech="React, Node.js, Strapi"
+        link="https://cerasp.vercel.app/"
+        linkText="Visit Site"
+        images={["/cerasp-1.png", "/cerasp-2.png"]}
+      />
+      <ProjectCard
+        title="EDU-VRAI"
+        information="VR immersive learning lab for John Abbott College, featuring interactive 3D models and environments."
+        tech="Unity, VR, C#, Blender, Photoshop, Wordpress"
+        link="https://vrai-dev.johnabbott.qc.ca/"
+        linkText="Visit Site"
+        images={["/eduvrai-1.png", "/eduvrai-2.png"]}
+      />
     </div>
   );
 }
